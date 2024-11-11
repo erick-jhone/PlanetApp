@@ -1,0 +1,17 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="100dp"
+    android:height="200dp"
+    android:viewportWidth="100"
+    android:viewportHeight="200">
+    <!-- Corpo do foguete -->
+    <path
+        android:name="body"
+        android:fillColor="#FF0000"
+        android:pathData="M50,0 L75,50 L50,200 L25,50 Z"/>
+    <!-- Janelas -->
+    <circle
+        android:fillColor="#FFFFFF"
+        android:centerX="50"
+        android:centerY="70"
+        android:radius="8dp"/>
+</vector>
