@@ -1,3 +1,27 @@
 <resources>
     <string name="app_name">PlanetsApp</string>
+
+    <string-array name="Marte">
+        <item>Quarto planeta a partir do Sol</item>
+        <item>Conhecido como o Planeta Vermelho</item>
+        <item>Possui montanhas e vales extensos</item>
+    </string-array>
+
+    <string-array name="Venus">
+        <item>Segundo planeta a partir do Sol</item>
+        <item>Atmosfera densa composta de dióxido de carbono</item>
+        <item>Temperatura superficial extremamente alta</item>
+    </string-array>
+
+    <string-array name="Terra">
+        <item>Terceiro planeta a partir do Sol</item>
+        <item>Único planeta conhecido a abrigar vida</item>
+        <item>Possui água em estado líquido na superfície</item>
+    </string-array>
+
+    <string-array name="Saturno">
+        <item>Sexto planeta a partir do Sol</item>
+        <item>Famoso por seus anéis proeminentes</item>
+        <item>Tem mais de 80 luas, incluindo Titã</item>
+    </string-array>
 </resources>

@@ -1,4 +1,4 @@
-package com.erick.planetsapp;
+package com.erick.planetsapp.activities;
 
 import static com.erick.planetsapp.utils.NavigationUtils.NAVIGATION_ARGUMENT_PLANET;
 import static com.erick.planetsapp.utils.NavigationUtils.NAVIGATION_KEY_EARTH;
@@ -7,7 +7,6 @@ import static com.erick.planetsapp.utils.NavigationUtils.NAVIGATION_KEY_SATURN;
 import static com.erick.planetsapp.utils.NavigationUtils.NAVIGATION_KEY_VENUS;
 import static com.erick.planetsapp.utils.NavigationUtils.navigate;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -15,19 +14,16 @@ import android.widget.ListView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
+import com.erick.planetsapp.R;
 import com.erick.planetsapp.adapter.ItemListAdapter;
 import com.erick.planetsapp.data.ItemListRepository;
 import com.erick.planetsapp.model.ItemList;
-import com.erick.planetsapp.utils.NavigationUtils;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements
-        AdapterView.OnItemClickListener {
+        AdapterView.OnItemClickListener, AdapterView.OnItemLongClickListener {
     private ListView listViewQuizOptions;
     private ItemListAdapter adapter;
     private ArrayList<ItemList> items;
@@ -40,8 +36,6 @@ public class MainActivity extends AppCompatActivity implements
         listViewQuizOptions = findViewById(R.id.listViewQuizOptions);
         makeAdapter();
         listViewQuizOptions.setAdapter(adapter);
-
-
     }
 
     private void makeAdapter(){
@@ -49,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements
         adapter = new ItemListAdapter(this, items);
         listViewQuizOptions.setAdapter(adapter);
         listViewQuizOptions.setOnItemClickListener(this);
+        listViewQuizOptions.setOnItemLongClickListener(this);
     }
 
 
@@ -57,6 +52,13 @@ public class MainActivity extends AppCompatActivity implements
         ItemList item = (ItemList) parent.getItemAtPosition(position);
 
         openScreen(item.getData());
+    }
+
+    @Override
+    public boolean onItemLongClick(AdapterView<?> adapterView, View view, int position, long id) {
+        items.remove(position);
+        adapter.notifyDataSetChanged();
+        return true;
     }
 
 
@@ -82,4 +84,6 @@ public class MainActivity extends AppCompatActivity implements
                 break;
         }
     }
+
+
 }
