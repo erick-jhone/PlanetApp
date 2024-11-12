@@ -25,15 +25,11 @@ public class RocketActivity extends AppCompatActivity {
         textView = findViewById(R.id.textPlanet);
 
 
-
         Animation rotateAnimation = AnimationUtils.loadAnimation(this, R.anim.rotate);
         rocketImageView.startAnimation(rotateAnimation);
 
-        Intent intent = new Intent();
+        Intent intent = getIntent();
         String textPlanet = intent.getStringExtra(NavigationUtils.NAVIGATION_ARGUMENT_PLANET);
-        textView.setText(textPlanet);
+        textView.setText("Viajando para " + textPlanet);
     }
-
-
-
 }

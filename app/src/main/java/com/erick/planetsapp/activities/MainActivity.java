@@ -1,5 +1,6 @@
 package com.erick.planetsapp;
 
+import static com.erick.planetsapp.utils.NavigationUtils.NAVIGATION_ARGUMENT_PLANET;
 import static com.erick.planetsapp.utils.NavigationUtils.NAVIGATION_KEY_EARTH;
 import static com.erick.planetsapp.utils.NavigationUtils.NAVIGATION_KEY_MARS;
 import static com.erick.planetsapp.utils.NavigationUtils.NAVIGATION_KEY_SATURN;
@@ -64,19 +65,19 @@ public class MainActivity extends AppCompatActivity implements
         switch(planet) {
 
             case NAVIGATION_KEY_MARS:
-                navigate(MainActivity.this, RocketActivity.class, planet, NAVIGATION_KEY_MARS);
+                navigate(MainActivity.this, RocketActivity.class, NAVIGATION_ARGUMENT_PLANET, NAVIGATION_KEY_MARS);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 break;
             case NAVIGATION_KEY_EARTH:
-                navigate(MainActivity.this, RocketActivity.class, planet, NAVIGATION_KEY_EARTH);
+                navigate(MainActivity.this, RocketActivity.class, NAVIGATION_ARGUMENT_PLANET, NAVIGATION_KEY_EARTH);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 break;
             case NAVIGATION_KEY_SATURN:
-                navigate(MainActivity.this, RocketActivity.class, planet, NAVIGATION_KEY_SATURN);
+                navigate(MainActivity.this, RocketActivity.class, NAVIGATION_ARGUMENT_PLANET, NAVIGATION_KEY_SATURN);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 break;
             case NAVIGATION_KEY_VENUS:
-                navigate(MainActivity.this, RocketActivity.class, planet, NAVIGATION_KEY_VENUS);
+                navigate(MainActivity.this, RocketActivity.class, NAVIGATION_ARGUMENT_PLANET, NAVIGATION_KEY_VENUS);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 break;
         }
