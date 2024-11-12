@@ -5,7 +5,6 @@ import com.erick.planetsapp.R;
 import com.erick.planetsapp.model.ItemList;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class ItemListRepository {
 

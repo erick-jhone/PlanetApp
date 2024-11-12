@@ -4,8 +4,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 
-import com.erick.planetsapp.R;
-
 public class NavigationUtils {
 
     // Argumentos de navegação

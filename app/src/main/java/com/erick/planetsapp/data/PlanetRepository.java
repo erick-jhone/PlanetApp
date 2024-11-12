@@ -3,11 +3,9 @@ package com.erick.planetsapp.data;
 import android.content.Context;
 
 import com.erick.planetsapp.R;
-import com.erick.planetsapp.model.ItemList;
 import com.erick.planetsapp.model.Planet;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class PlanetRepository {
