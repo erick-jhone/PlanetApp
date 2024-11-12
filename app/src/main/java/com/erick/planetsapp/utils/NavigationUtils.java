@@ -26,9 +26,6 @@ public class NavigationUtils {
         Intent intent = new Intent(context, destination);
         intent.putExtra(key, value);
         context.startActivity(intent);
-        if (context instanceof Activity) {
-            ((Activity) context).finish();
-        }
     }
 
     public static void navigateAndPop(Context context, Class<?> destination) {
@@ -37,5 +34,20 @@ public class NavigationUtils {
         if (context instanceof Activity) {
             ((Activity) context).finish();
         }
+    }
+
+    public static void navigateAndPop(Context context, Class<?> destination, String key, String value) {
+        Intent intent = new Intent(context, destination);
+        intent.putExtra(key, value);
+        context.startActivity(intent);
+        if (context instanceof Activity) {
+            ((Activity) context).finish();
+        }
+    }
+
+    public static void navigateReorderToFront(Context context, Class<?> destination) {
+        Intent intent = new Intent(context, destination);
+        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+        context.startActivity(intent);
     }
 }

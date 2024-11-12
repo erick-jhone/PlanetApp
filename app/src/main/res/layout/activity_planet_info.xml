@@ -19,7 +19,6 @@
             android:layout_width="260dp"
             android:layout_height="260dp"
             android:layout_marginBottom="16dp"
-            android:contentDescription=""
             android:src="@drawable/earth" />
 
         <TextView
@@ -63,5 +62,15 @@
             android:text="Característica 1"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="@color/Font" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonToHome"
+            android:elevation="4dp"
+            android:backgroundTint="@color/BackGroundUniverse"
+            android:text="@string/tela_inicial"
+            android:layout_marginTop="22dp"/>
+
     </LinearLayout>
 </ScrollView>

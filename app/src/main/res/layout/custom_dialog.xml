@@ -2,6 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:elevation="6dp"
+    android:background="@drawable/estreladamorte"
     android:orientation="vertical"
     android:padding="20dp">
 
@@ -23,25 +26,28 @@
         android:id="@+id/textViewTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Devemos realmente destruir esse planeta?"
+        android:textColor="@color/Font"
+        android:text="@string/devemos_realmente_destruir_esse_planeta"
         android:textStyle="bold" />
 
     <LinearLayout
-        android:layout_marginTop="@android:dimen/app_icon_size"
-        android:layout_width="wrap_content"
+        android:layout_marginTop="42dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:orientation="horizontal">
         <Button
             android:id="@+id/buttonConfirm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/RedDark"
             android:text="Destruir" />
 
-
         <Button
-            android:layout_marginStart="@android:dimen/app_icon_size"
+            android:layout_marginStart="16dp"
             android:id="@+id/buttonCancel"
             android:layout_width="wrap_content"
+            android:backgroundTint="@color/BackGroundUniverse"
             android:layout_height="wrap_content"
             android:text="Desistir" />
     </LinearLayout>

@@ -29,7 +29,7 @@ public class RocketActivity extends AppCompatActivity {
     }
 
     private void goToPlanetInfoScreen() {
-        new Handler().postDelayed(() -> NavigationUtils.navigate(RocketActivity.this,
+        new Handler().postDelayed(() -> NavigationUtils.navigateAndPop(RocketActivity.this,
                 PlanetInfoActivity.class,
                 NavigationUtils.NAVIGATION_ARGUMENT_PLANET,
                 textPlanet), 7000);

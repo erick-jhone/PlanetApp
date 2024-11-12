@@ -14,9 +14,8 @@ public class ItemListRepository {
 
         itemList.add(new ItemList("Terra", R.drawable.planeta_terra));
         itemList.add(new ItemList("Marte", R.drawable.marte));
-        itemList.add(new ItemList("Venus", R.drawable.venus));
+        itemList.add(new ItemList("Venus", R.drawable.venus_vetor));
         itemList.add(new ItemList("Saturno", R.drawable.saturno));
-
 
         return itemList;
     }

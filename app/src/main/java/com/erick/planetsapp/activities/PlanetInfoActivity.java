@@ -2,6 +2,8 @@ package com.erick.planetsapp.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -22,6 +24,7 @@ public class PlanetInfoActivity extends AppCompatActivity {
     TextView textViewPlanetName;
     ImageView imageViewPlanet;
     String planetName;
+    Button buttonToHome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +33,7 @@ public class PlanetInfoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_planet_info);
 
         initUIComponents();
+        setupListeners();
         getExtras();
         setPlanetInfo();
     }
@@ -40,6 +44,14 @@ public class PlanetInfoActivity extends AppCompatActivity {
         characteristics[0] = findViewById(R.id.characteristic1);
         characteristics[1] = findViewById(R.id.characteristic2);
         characteristics[2] = findViewById(R.id.characteristic3);
+        buttonToHome = findViewById(R.id.buttonToHome);
+    }
+
+    public void setupListeners() {
+        buttonToHome.setOnClickListener(v -> {
+            NavigationUtils.navigateReorderToFront(this, MainActivity.class);
+        }
+      );
     }
 
     private void getExtras() {
@@ -56,5 +68,4 @@ public class PlanetInfoActivity extends AppCompatActivity {
             characteristics[i].setText(planet.getCharacteristics()[i]);
         }
     }
-
 }

@@ -15,6 +15,7 @@ import android.widget.ListView;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.erick.planetsapp.adapter.ConfirmDeleteDialog;
 import com.erick.planetsapp.R;
 import com.erick.planetsapp.adapter.ItemListAdapter;
 import com.erick.planetsapp.data.ItemListRepository;
@@ -39,7 +40,9 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     private void makeAdapter(){
-        items = ItemListRepository.getMockedItemList();
+        if(items == null){
+            items = ItemListRepository.getMockedItemList();
+        }
         adapter = new ItemListAdapter(this, items);
         listViewQuizOptions.setAdapter(adapter);
         listViewQuizOptions.setOnItemClickListener(this);
@@ -50,14 +53,20 @@ public class MainActivity extends AppCompatActivity implements
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         ItemList item = (ItemList) parent.getItemAtPosition(position);
-
         openScreen(item.getData());
     }
 
     @Override
     public boolean onItemLongClick(AdapterView<?> adapterView, View view, int position, long id) {
-        items.remove(position);
-        adapter.notifyDataSetChanged();
+        ConfirmDeleteDialog dialog = new ConfirmDeleteDialog();
+        dialog.setConfirmDeleteListener(new ConfirmDeleteDialog.ConfirmDeleteListener() {
+            @Override
+            public void onConfirmDelete() {
+                items.remove(position);
+                adapter.notifyDataSetChanged();
+            }
+        });
+        dialog.show(getSupportFragmentManager(), "ConfirmDeleteDialog");
         return true;
     }
 
@@ -84,6 +93,4 @@ public class MainActivity extends AppCompatActivity implements
                 break;
         }
     }
-
-
 }
