@@ -25,7 +25,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements
         AdapterView.OnItemClickListener, AdapterView.OnItemLongClickListener {
-    private ListView listViewQuizOptions;
+    private ListView listViewOptions;
     private ItemListAdapter adapter;
     private ArrayList<ItemList> items;
 
@@ -34,9 +34,9 @@ public class MainActivity extends AppCompatActivity implements
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-        listViewQuizOptions = findViewById(R.id.listViewQuizOptions);
+        listViewOptions = findViewById(R.id.listViewOptions);
         makeAdapter();
-        listViewQuizOptions.setAdapter(adapter);
+        listViewOptions.setAdapter(adapter);
     }
 
     private void makeAdapter(){
@@ -44,11 +44,10 @@ public class MainActivity extends AppCompatActivity implements
             items = ItemListRepository.getMockedItemList();
         }
         adapter = new ItemListAdapter(this, items);
-        listViewQuizOptions.setAdapter(adapter);
-        listViewQuizOptions.setOnItemClickListener(this);
-        listViewQuizOptions.setOnItemLongClickListener(this);
+        listViewOptions.setAdapter(adapter);
+        listViewOptions.setOnItemClickListener(this);
+        listViewOptions.setOnItemLongClickListener(this);
     }
-
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -70,11 +69,9 @@ public class MainActivity extends AppCompatActivity implements
         return true;
     }
 
-
     public void openScreen(String planet) {
 
         switch(planet) {
-
             case NAVIGATION_KEY_MARS:
                 navigate(MainActivity.this, RocketActivity.class, NAVIGATION_ARGUMENT_PLANET, NAVIGATION_KEY_MARS);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);

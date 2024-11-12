@@ -53,9 +53,4 @@ public class RocketActivity extends AppCompatActivity {
         Animation rotateAnimation = AnimationUtils.loadAnimation(this, R.anim.rotate);
         rocketImageView.startAnimation(rotateAnimation);
     }
-
-
-
-
-
 }
